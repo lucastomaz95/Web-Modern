@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Especificidade CSS</title>
+    <style>
+        /* https://developer.mozilla.org/pt-BR/docs/Web/CSS/Specificity */
+        /*
+        Em linhas Gerais
+        
+            1. regra com !important
+            2. seletores mais específicos
+            3. última regra selecionada (empate)
+         */
+
+         p{
+             background-color: aquamarine;
+         }
+
+         .observacao{
+            background-color: #5F5;
+            border: dashed;
+            padding: 200px !important; /* ele burla a regra de especifidade */
+            font-size: 40px;
+         }
+
+         p.observacao{
+             padding: 2px; /* esse aqui ganha porque a especificidade é maior */
+            background: linear-gradient(to right, red, yellow)
+            }
+    </style>
+</head>
+
+<body>
+    <p class='observacao'>Olha essa observação!!!!</p>
+</body>
+
+</html>
